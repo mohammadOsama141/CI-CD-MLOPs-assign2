@@ -2,13 +2,8 @@ from flask import Flask, request, render_template
 import joblib
 import os
 
-app = Flask(__name__)
+app = Flask(__name)
 
-
-
-
-#model_path = "/home/shayy/Documents/Osama Docker/iris_model.pkl"
-#model = joblib.load(model_path)
 model = joblib.load("iris_model.pkl")
 
 @app.route("/", methods=["GET", "POST"])
@@ -28,4 +23,3 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
